@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LHB80.wav-e8dfad51aef9ebe6ab86f8ab855abc10.sample"
+
+[deps]
+
+source_file="res://sounds/CoachSounds/LHB80.wav"
+dest_files=[ "res://.import/LHB80.wav-e8dfad51aef9ebe6ab86f8ab855abc10.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

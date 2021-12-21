@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/x_ss9_pantot_down.wav-60d5a65c40df1aeec056ca13d5cd71f0.sample"
+
+[deps]
+
+source_file="res://sounds/x_ss9_pantot_down.wav"
+dest_files=[ "res://.import/x_ss9_pantot_down.wav-60d5a65c40df1aeec056ca13d5cd71f0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

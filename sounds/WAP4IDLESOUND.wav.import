@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WAP4IDLESOUND.wav-a7b59a56f292721fddab1879fdd2e2dc.sample"
+
+[deps]
+
+source_file="res://sounds/WAP4IDLESOUND.wav"
+dest_files=[ "res://.import/WAP4IDLESOUND.wav-a7b59a56f292721fddab1879fdd2e2dc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=true
+compress/mode=0

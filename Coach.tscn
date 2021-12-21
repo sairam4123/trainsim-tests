@@ -1,0 +1,368 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://addons/imjp94.yafsm/src/states/StateMachine.gd" type="Script" id=1]
+[ext_resource path="res://addons/imjp94.yafsm/src/StateMachinePlayer.gd" type="Script" id=2]
+[ext_resource path="res://addons/imjp94.yafsm/src/states/State.gd" type="Script" id=3]
+[ext_resource path="res://addons/imjp94.yafsm/src/transitions/Transition.gd" type="Script" id=4]
+[ext_resource path="res://addons/imjp94.yafsm/src/conditions/FloatCondition.gd" type="Script" id=5]
+[ext_resource path="res://Coach.gd" type="Script" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+
+[sub_resource type="BoxShape" id=31]
+extents = Vector3( 0.9, 0.75, 4 )
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+__meta__ = {
+"graph_offset": Vector2( 48, -40 )
+}
+name = "Entry"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 3 )
+__meta__ = {
+"graph_offset": Vector2( 208, -40 )
+}
+name = "Idle"
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 3 )
+__meta__ = {
+"graph_offset": Vector2( 359, -40 )
+}
+name = "Speed 10"
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 3 )
+__meta__ = {
+"graph_offset": Vector2( 519, -40 )
+}
+name = "Speed 20"
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 3 )
+__meta__ = {
+"graph_offset": Vector2( 699, -40 )
+}
+name = "Speed 40"
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 3 )
+__meta__ = {
+"graph_offset": Vector2( 919, -40 )
+}
+name = "Speed 60"
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 3 )
+__meta__ = {
+"graph_offset": Vector2( 1159, -40 )
+}
+name = "Speed 80"
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 4 )
+from = "Entry"
+to = "Idle"
+conditions = {
+}
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 5 )
+name = "speed"
+comparation = 2
+value = 10.0
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 4 )
+from = "Idle"
+to = "Speed 10"
+conditions = {
+"speed": SubResource( 9 )
+}
+
+[sub_resource type="Resource" id=11]
+script = ExtResource( 5 )
+name = "speed"
+comparation = 3
+value = 10.0
+
+[sub_resource type="Resource" id=12]
+script = ExtResource( 4 )
+from = "Speed 10"
+to = "Idle"
+conditions = {
+"speed": SubResource( 11 )
+}
+
+[sub_resource type="Resource" id=13]
+script = ExtResource( 5 )
+name = "speed"
+comparation = 2
+value = 20.0
+
+[sub_resource type="Resource" id=14]
+script = ExtResource( 4 )
+from = "Speed 10"
+to = "Speed 20"
+conditions = {
+"speed": SubResource( 13 )
+}
+
+[sub_resource type="Resource" id=15]
+script = ExtResource( 5 )
+name = "speed"
+comparation = 3
+value = 20.0
+
+[sub_resource type="Resource" id=16]
+script = ExtResource( 4 )
+from = "Speed 20"
+to = "Speed 10"
+conditions = {
+"speed": SubResource( 15 )
+}
+
+[sub_resource type="Resource" id=17]
+script = ExtResource( 5 )
+name = "speed"
+comparation = 2
+value = 40.0
+
+[sub_resource type="Resource" id=18]
+script = ExtResource( 4 )
+from = "Speed 20"
+to = "Speed 40"
+conditions = {
+"speed": SubResource( 17 )
+}
+
+[sub_resource type="Resource" id=19]
+script = ExtResource( 5 )
+name = "speed"
+comparation = 3
+value = 40.0
+
+[sub_resource type="Resource" id=20]
+script = ExtResource( 4 )
+from = "Speed 40"
+to = "Speed 20"
+conditions = {
+"speed": SubResource( 19 )
+}
+
+[sub_resource type="Resource" id=21]
+script = ExtResource( 5 )
+name = "speed"
+comparation = 2
+value = 60.0
+
+[sub_resource type="Resource" id=22]
+script = ExtResource( 4 )
+from = "Speed 40"
+to = "Speed 60"
+conditions = {
+"speed": SubResource( 21 )
+}
+
+[sub_resource type="Resource" id=23]
+script = ExtResource( 5 )
+name = "speed"
+comparation = 3
+value = 60.0
+
+[sub_resource type="Resource" id=24]
+script = ExtResource( 4 )
+from = "Speed 60"
+to = "Speed 40"
+conditions = {
+"speed": SubResource( 23 )
+}
+
+[sub_resource type="Resource" id=25]
+script = ExtResource( 5 )
+name = "speed"
+comparation = 2
+value = 80.0
+
+[sub_resource type="Resource" id=26]
+script = ExtResource( 4 )
+from = "Speed 60"
+to = "Speed 80"
+conditions = {
+"speed": SubResource( 25 )
+}
+
+[sub_resource type="Resource" id=27]
+script = ExtResource( 5 )
+name = "speed"
+comparation = 3
+value = 80.0
+
+[sub_resource type="Resource" id=28]
+script = ExtResource( 4 )
+from = "Speed 80"
+to = "Speed 60"
+conditions = {
+"speed": SubResource( 27 )
+}
+
+[sub_resource type="Resource" id=29]
+script = ExtResource( 1 )
+name = ""
+states = {
+"Entry": SubResource( 1 ),
+"Idle": SubResource( 2 ),
+"Speed 10": SubResource( 3 ),
+"Speed 20": SubResource( 4 ),
+"Speed 40": SubResource( 5 ),
+"Speed 60": SubResource( 6 ),
+"Speed 80": SubResource( 7 )
+}
+transitions = {
+"Entry": {
+"Idle": SubResource( 8 )
+},
+"Idle": {
+"Speed 10": SubResource( 10 )
+},
+"Speed 10": {
+"Idle": SubResource( 12 ),
+"Speed 20": SubResource( 14 )
+},
+"Speed 20": {
+"Speed 10": SubResource( 16 ),
+"Speed 40": SubResource( 18 )
+},
+"Speed 40": {
+"Speed 20": SubResource( 20 ),
+"Speed 60": SubResource( 22 )
+},
+"Speed 60": {
+"Speed 40": SubResource( 24 ),
+"Speed 80": SubResource( 26 )
+},
+"Speed 80": {
+"Speed 60": SubResource( 28 )
+}
+}
+
+[sub_resource type="SpatialMaterial" id=33]
+albedo_color = Color( 0, 1, 0.905882, 1 )
+albedo_texture = ExtResource( 7 )
+uv1_scale = Vector3( 5, 5, 5 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=32]
+albedo_color = Color( 0.960784, 0.0156863, 0.0156863, 1 )
+albedo_texture = ExtResource( 7 )
+uv1_scale = Vector3( 5, 5, 5 )
+uv1_triplanar = true
+
+[node name="Coach" type="VehicleBody"]
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+shape = SubResource( 31 )
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="StateMachinePlayer" type="Node" parent="."]
+script = ExtResource( 2 )
+state_machine = SubResource( 29 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 69.0
+margin_bottom = 14.0
+rect_scale = Vector2( 2, 2 )
+text = "Speed: %d"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeshInstance" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+depth = 9.0
+material = SubResource( 33 )
+
+[node name="VehicleWheel" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, 0.5, 3.5 )
+suspension_travel = 0.25
+suspension_stiffness = 50.0
+suspension_max_force = 955.0
+
+[node name="MeshInstance" type="CSGCylinder" parent="VehicleWheel"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
+radius = 0.5
+height = 0.25
+sides = 64
+material = SubResource( 32 )
+
+[node name="VehicleWheel2" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, 0.5, 0 )
+suspension_travel = 0.25
+suspension_stiffness = 50.0
+suspension_max_force = 955.0
+
+[node name="MeshInstance2" type="CSGCylinder" parent="VehicleWheel2"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
+radius = 0.5
+height = 0.25
+sides = 64
+material = SubResource( 32 )
+
+[node name="VehicleWheel3" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, 0.5, -3.5 )
+suspension_travel = 0.25
+suspension_stiffness = 50.0
+suspension_max_force = 955.0
+
+[node name="MeshInstance3" type="CSGCylinder" parent="VehicleWheel3"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
+radius = 0.5
+height = 0.25
+sides = 64
+material = SubResource( 32 )
+
+[node name="VehicleWheel4" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 0.5, 3.5 )
+suspension_travel = 0.25
+suspension_stiffness = 50.0
+suspension_max_force = 955.0
+
+[node name="MeshInstance" type="CSGCylinder" parent="VehicleWheel4"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
+radius = 0.5
+height = 0.25
+sides = 64
+material = SubResource( 32 )
+
+[node name="VehicleWheel5" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 0.5, 0 )
+suspension_travel = 0.25
+suspension_stiffness = 50.0
+suspension_max_force = 955.0
+
+[node name="MeshInstance" type="CSGCylinder" parent="VehicleWheel5"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
+radius = 0.5
+height = 0.25
+sides = 64
+material = SubResource( 32 )
+
+[node name="VehicleWheel6" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 0.5, -3.5 )
+suspension_travel = 0.25
+suspension_stiffness = 50.0
+suspension_max_force = 955.0
+
+[node name="MeshInstance" type="CSGCylinder" parent="VehicleWheel6"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
+radius = 0.5
+height = 0.25
+sides = 64
+material = SubResource( 32 )
+
+[connection signal="transited" from="StateMachinePlayer" to="." method="_on_StateMachinePlayer_transited"]

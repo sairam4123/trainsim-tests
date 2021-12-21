@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MMC_Announcement.wav-3ecef7890c6205072c07316d70ceb666.sample"
+
+[deps]
+
+source_file="res://sounds/MMC_Announcement.wav"
+dest_files=[ "res://.import/MMC_Announcement.wav-3ecef7890c6205072c07316d70ceb666.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
